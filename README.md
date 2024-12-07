@@ -1,64 +1,20 @@
 ---
 
-# Mystic Runestone Airdrop Tool Backend
+# Runestone Dispatcher Backend
 
 ## Overview
 
-The Runestone Airdrop Backend is a server application that facilitates the airdrop of Runestone tokens. The backend is developed using Node.js and Express.js and includes API endpoints for various functionalities such as redeeming fees, estimating transaction fees, and managing different amounts for airdrops. The project also integrates Swagger UI for API documentation.
+The Runestone Dispatcher Backend is a server application that facilitates the distribution to many users of Runestone tokens. The backend is developed using Node.js and Express.js and includes API endpoints for various functionalities such as redeeming fees, estimating transaction fees, and managing different amounts for airdrops. The project also integrates Swagger UI for API documentation.
 
 ## Project Structure
-
-```
-root/
-├── config/
-│   └── config.ts
-├── routes
-│   └── AirdropRoute
-│        ├── different-amount.route.ts
-│        ├── large-different-amount.route.ts
-│        ├── large-different-amount-airdrop.route.ts
-│        ├── same-amount.route.ts
-│   └── EstimateRoute
-│        ├── different-amount-estimate.route.ts
-│        ├── same-amount-estimate.route.ts
-│   └── SubRoute
-│        └── runestone-fee.route.ts
-├── service/
-│   └── psbt/
-│       ├── CreateAirdropRunestonePsbt.ts
-│       ├── redeemRunestoneAmountRunestone.ts
-│       ├── redeemRunestoneSameAmount.ts
-│       ├── RuneOne.ts
-│       ├── RuneSub.ts
-│       └── SameAmountEstimate.ts
-├── test/
-│   ├── CreateTest.ts
-│   ├── freeTierAirdrop.ts
-│   ├── matchTests.ts
-│   └── MWtests.ts
-├── utils/
-│   ├── blockcypher.api.ts
-│   ├── mempool.api.ts
-│   ├── TS
-│   │   ├── mw.ts
-│   │   └── TsUtils.ts
-│   └── unisat.api.ts
-├── .env.example
-├── package.json
-├── README.md
-├── swagger.yaml
-├── tsconfig.json
-└── yarn.lock
-env
-```
 
 ## Installation
 
 1. Clone the repository:
 
    ```
-   git clone https://github.com/leionion/rune-airdrop-backend.git
-   cd rune-airdrop-backend
+   git clone https://github.com/leionion/rune-dispatcher-backend.git
+   cd rune-dispatcher-backend
    ```
 
 2. Install dependencies:
@@ -128,7 +84,7 @@ Mutex from `async-mutex` is used for API rate limit protection functionality.
 The base URL for the API is:
 
 - Development: `http://localhost:5000/api`
-- Production: `https://rune-airdrop-backend.onrender.com/api`
+- Production: `https://rune-dispatcher-backend.onrender.com/api`
 
 ### Endpoints
 
@@ -164,13 +120,13 @@ The base URL for the API is:
 
 #### Estimate Different Amount Rune Airdrop
 
-- **Description:** Estimate the different amount Rune Airdrop
+- **Description:** Estimate the different amount Rune
 - **Endpoint:** `/estimate/different-amount`
 - **HTTP Method:** POST
 
 #### Estimate Same Amount Rune Airdrop
 
-- **Description:** Estimate the same amount Rune Airdrop
+- **Description:** Estimate the same amount Rune
 - **Endpoint:** `/estimate/same-amount`
 - **HTTP Method:** POST
 
